@@ -21,7 +21,7 @@ module.exports = function zipWrite (rootDir, options, callback) {
 
   zipBuffer(rootDir, options, function (err, buffer) {
     if (options.saveTo) {
-      fs.writeFile(options.saveTo, buffer, { encoding: 'binary' }, function (err) {
+      fs.writeFileSync(options.saveTo, buffer, { encoding: 'binary' }, function (err) {
         callback(err, buffer);
       });
     } else {
